@@ -22,8 +22,9 @@ keys.forEach((e) =>
         const keyCode = c.target.attributes[0].value
         audio.forEach(e => {
             if (e.attributes[0].value == keyCode) {
-                audio.currentTime = 0;
-                e.play()
+                if (!e) return;
+    e.currentTime = 0;
+    e.play();
             }
         })
     })
